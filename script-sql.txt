@@ -1,0 +1,12 @@
+CREATE DATABASE if not exists LIBRARY;
+USE LIBRARY;
+
+CREATE TABLE IF NOT EXISTS `libros` (
+  `lib_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `lib_nombre` varchar(100) NOT NULL,
+  `lib_autor` varchar(100) NOT NULL,
+  `lib_editorial` varchar(100) NOT NULL,
+  PRIMARY KEY (`lib_id`),
+  UNIQUE KEY `lib_id` (`lib_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+

@@ -1,0 +1,2 @@
+npm i corns
+npm i cors
