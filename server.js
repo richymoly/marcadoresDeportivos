@@ -1,33 +1,35 @@
-const express = require('express')
-const mysql = require('mysql')
-const myconn = require('express-myconnection')
-const routes = require('./routes')
-const cors = require('cors')
-
-const app = express()
+  
+const express=require('express')
+const mysql=require('mysql2')
+const myconn=require('express-myconnection')
+const routes=require('./routes')
+const cors=require('cors')
+ 
+const app=express()
+ 
+app.set('port',9000)
 app.use(cors())
 
-app.set('port', 9000)
-
-const dbOptions = {
+const dbOptions={
     host: 'localhost',
-    port: '3306',
-    user: 'root',
-    password: 'C@p3r42022',
-    database: 'LIBRARY'
+    port:'3306',
+    user:'root',
+    password:'12345678',
+    database: 'librery'
 }
 
-// -------------middelwares-------------------------
-app.use( myconn(mysql, dbOptions, 'single') )
-app.use( express.json() )
+/// middelwares
+app.use(myconn(mysql,dbOptions,'single'))
+app.use(express.json())
 
-// ----------------Routes------------------------
-app.get('/', (req, res) => {
-    res.send('Welcome to my APP 2022 UNAB')
+///routes
+app.get('/',(req,res)=>{
+   res.send('Welcome to my APP 2022')
 })
 
-app.use('/api', routes)
+app.use('/api',routes)
 
-app.listen(app.get('port'), () => {
-    console.log(`Server runing on port ${app.get('port')}`)
-})
+ 
+app.listen(app.get('port'),()=>{
+    console.log(`El puerto corre en: ${app.get('port')}`)
+})   

@@ -1,31 +1,41 @@
 ###
-GET http://localhost:9000/api/usuarios HTTP/1.1
+GET http://localhost:9000/api/eventos/5 HTTP/1.1
 
 ###
 POST http://localhost:9000/api/usuarios HTTP/1.1
 Content-Type: application/json
 
+
+#     "lib_nombre":"EL PRINCIPITO2",
+#     "lib_autor":"Petit Price2",
+#     "lib_editorial":"Planeta2"
+
+
 {
-    "usu_email": "andres.perez@o365.unab.edu.co",
-    "usu_clave": "8723",
-    "usu_nombres": "Andres Fernando",
-    "usu_apellidos": "Perez Acosta"
+    "usu_email":"oneiber@gmail.com",
+    "usu_clave":"123456",
+    "usu_nombres":"oneiber",
+    "usu_apellidos":"ospina"
 }
 
+###
+DELETE http://localhost:9000/api/usuarios/usu_id/1 HTTP/1.1
+
 
 ###
-DELETE http://localhost:9000/api/usuarios/usu_id/2 HTTP/1.1
-
-
-###
-PUT http://localhost:9000/api/usuarios/usu_id/3 HTTP/1.1
+PUT http://localhost:9000/api/usuarios/usu_id/1 HTTP/1.1
 Content-Type: application/json
 
+# {
+#     "lib_nombre":"oneiber",
+#     "lib_autor":"Petit Price",
+#     "lib_editorial":"Planeta"
+# }
+
+
 {
-    "usu_email": "andres.perez@o365.unab.edu.coMODIFICADO2",
-    "usu_clave": "8723MODIFICADO2",
-    "usu_nombres": "Andres Fernando MODIFICADO2",
-    "usu_apellidos": "Perez Acosta MODIFICADO2"
+    "usu_email":"ricardom@gmail.com",
+    "usu_clave":"1234563",
+    "usu_nombres":"12345678",
+    "usu_apellidos":"12345678"
 }
-
-
